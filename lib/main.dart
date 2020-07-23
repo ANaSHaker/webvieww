@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     _animation = Tween<double>(begin: 0, end: 1).animate(curvedAnimation);
 
     super.initState();
-    FirebaseAdMob.instance.initialize(appId:"ca-app-pub-1297925267764389~1213699770");
+    FirebaseAdMob.instance.initialize(appId:"ca-app-pub-1569716075637508~5384219932");
     //Change appId With Admob Id
     _bannerAd = createBannerAd()
       ..load()
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   BannerAd createBannerAd() {
     return BannerAd(
-        adUnitId: "ca-app-pub-1569716075637508/9164231587",
+        adUnitId: "ca-app-pub-1569716075637508~9164231587",
         //Change BannerAd adUnitId with Admob ID
         size: AdSize.banner,
         targetingInfo: targetingInfo,
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: "ca-app-pub-1569716075637508/7818811589",
+        adUnitId: "ca-app-pub-1569716075637508~7818811589",
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
@@ -115,6 +115,23 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
+        floatingActionButton: Container(
+          height: 150,
+          width: 70,
+          child: FloatingActionButton(
+
+            onPressed: (){
+              setState(() {
+                MyPlaceholderWidget('https://www.youtube.com/channel/UCwabSoObZ0xUDoeJOtp5vBA/videos');
+              });
+            },
+            child: Text("Home",textAlign: TextAlign.center,),
+
+            backgroundColor: Colors.grey.shade900,
+            elevation: 10,
+
+          ),
+        ),
         appBar: AppBar(
           title: Text("one team mix"),
           centerTitle: true,
